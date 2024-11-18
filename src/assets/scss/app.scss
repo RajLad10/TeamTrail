@@ -1,0 +1,20 @@
+//Core files
+@import 'bootstrap/dist/css/bootstrap.css';
+@import "node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // For breakpoints-related mixins
+@import 'temp/variables-dark';
+@import 'temp/variables';
+
+// @import "../../../node_modules/bootstrap/scss/mixins.scss";
+
+// @import 'sidebar';
+@import 'otp';
+@import 'loaders';
+@import 'vertical';
+@import 'temp/crypto';
+@import 'topbar';
+@import 'custom';
+@import 'layouts';
+@import 'temp/structure-rtl';
+@import 'custom-scrollbar';

@@ -1,0 +1,19 @@
+.verify-otp-wrapper{
+    text-align: center;
+    padding: 20px;
+}
+
+.otp-input{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    input{
+        margin-right: 0px !important;
+    }
+}
+
+.invalid-feedback{
+    display: block !important;
+    margin-top: 10px;
+}
