@@ -43,7 +43,7 @@
   padding-top: $header-height;
   box-shadow: $box-shadow;
   overflow-y: auto;
-  background-color: #3a3b3c;
+  background-color: #2a3042;
   @media (max-width: 991.98px) {
     top: $header-height;
     padding-top: 0px;
@@ -71,7 +71,7 @@
 
 #sidebar-menu {
   padding: 10px 0 30px 0;
-  background-color: #3a3b3c;
+  background-color: #2a3042;
 
   .mm-active {
     > .has-arrow {
@@ -98,7 +98,7 @@
       a {
         display: block;
         padding: 0.625rem 1.5rem;
-        color: $sidebar-menu-item-color;
+        color: #79829c;
         position: relative;
         font-size: 13px;
         transition: all 0.4s;
@@ -110,15 +110,15 @@
           font-size: 1.25rem;
           line-height: 1.40625rem;
           vertical-align: middle;
-          color: $sidebar-menu-item-icon-color;
+          color: #7f8387;
           transition: all 0.4s;
         }
 
         &:hover {
-          color: $sidebar-menu-item-hover-color;
+          color: #fff;
 
           i {
-            color: $sidebar-menu-item-hover-color;
+            color: #383c40;
           }
         }
       }
@@ -134,9 +134,9 @@
           a {
             padding: 0.4rem 1.5rem 0.4rem 3.5rem;
             font-size: 13px;
-            color: $sidebar-menu-sub-item-color;
+            color: #79829c;
             &:hover {
-              color: $sidebar-menu-item-hover-color;
+              color: #fff;
             }
           }
 
@@ -168,22 +168,22 @@
 }
 
 .mm-active {
-  color: $sidebar-menu-item-active-color !important;
+  color: #fff !important;
   > a {
-    color: $sidebar-menu-item-active-color !important;
+    color: #fff !important;
     i {
-      color: $sidebar-menu-item-active-color !important;
+      color: #fff !important;
     }
   }
   .active {
-    color: $sidebar-menu-item-active-color !important;
+    color: #fff !important;
 
     i {
-      color: $sidebar-menu-item-active-color !important;
+      color: #fff !important;
     }
   }
   > i {
-    color: $sidebar-menu-item-active-color !important;
+    color: #fff !important;
   }
 }
 
@@ -284,7 +284,7 @@
             &:hover,
             &:active,
             &:focus {
-              color: $sidebar-menu-item-hover-color;
+              color: #383c40;
             }
 
             i {
@@ -333,10 +333,10 @@
                 position: relative;
                 width: 190px;
                 z-index: 6;
-                color: $sidebar-menu-sub-item-color;
+                color: #545a6d;
 
                 &:hover {
-                  color: $sidebar-menu-item-hover-color;
+                  color: #383c40;
                 }
               }
             }
@@ -394,15 +394,15 @@ body[data-sidebar="dark"] {
           color: #a6b0cf;
 
           i {
-            color: $sidebar-dark-menu-item-icon-color;
+            color: #6a7187;
           }
 
           &:hover {
-            color: $sidebar-dark-menu-item-hover-color;
+            color: #ffffff;
             background-color: #515768 !important;
 
             i {
-              color: $sidebar-dark-menu-item-hover-color;
+              color: #ffffff;
             }
           }
         }
@@ -410,10 +410,10 @@ body[data-sidebar="dark"] {
         ul.sub-menu {
           li {
             a {
-              color: $sidebar-dark-menu-sub-item-color;
+              color: #79829c;
 
               &:hover {
-                color: $sidebar-dark-menu-item-hover-color;
+                color: #ffffff;
               }
             }
           }
@@ -437,17 +437,17 @@ body[data-sidebar="dark"] {
             &:hover {
               > a {
                 background: lighten($sidebar-dark-bg, 2%);
-                color: $sidebar-dark-menu-item-hover-color;
+                color: #ffffff;
                 i {
-                  color: $sidebar-dark-menu-item-hover-color;
+                  color: #ffffff;
                 }
               }
 
               > ul {
                 a {
-                  color: $sidebar-dark-menu-sub-item-color;
+                  color: #79829c;
                   &:hover {
-                    color: $sidebar-dark-menu-item-hover-color;
+                    color: #ffffff;
                   }
                 }
               }
@@ -462,9 +462,9 @@ body[data-sidebar="dark"] {
         ul {
           li {
             &.mm-active .active {
-              color: $sidebar-dark-menu-item-active-color !important;
+              color: #ffffff !important;
               i {
-                color: $sidebar-dark-menu-item-active-color !important;
+                color: #ffffff !important;
               }
             }
           }
@@ -473,27 +473,27 @@ body[data-sidebar="dark"] {
     }
   }
   .mm-active {
-    color: $sidebar-dark-menu-item-active-color !important;
+    color: #ffffff !important;
     > a {
-      color: $sidebar-dark-menu-item-active-color !important;
+      color: #ffffff !important;
       i {
-        color: $sidebar-dark-menu-item-active-color !important;
+        color: #ffffff !important;
       }
     }
     > i {
-      color: $sidebar-dark-menu-item-active-color !important;
+      color: #ffffff !important;
     }
     .active {
-      color: $sidebar-dark-menu-item-active-color !important;
+      color: #ffffff !important;
 
       i {
-        color: $sidebar-dark-menu-item-active-color !important;
+        color: #ffffff !important;
       }
     }
   }
 
   .menu-title {
-    color: $sidebar-dark-menu-item-icon-color;
+    color: #6a7187;
   }
 }
 
@@ -627,7 +627,7 @@ body[data-sidebar="greatwhale"] {
           color: rgba($white, 0.6);
           &.sidebar-title{
             text-decoration: none !important;
-  
+            color: #a6b0cf;
           }
           
           i {
@@ -680,7 +680,7 @@ body[data-sidebar="greatwhale"] {
           li {
             &.mm-active {
               .active {
-                color: $sidebar-menu-item-active-color !important;
+                color: #fff !important;
               }
             }
 
@@ -688,15 +688,16 @@ body[data-sidebar="greatwhale"] {
               li {
                 a {
                   &:hover {
-                    color: $sidebar-menu-item-active-color;
+                    color: #fff;
                   }
                 }
                 &.mm-active {
-                  color: $sidebar-menu-item-active-color !important;
+                  color: #fff !important;
+                  
                   > a {
-                    color: $sidebar-menu-item-active-color !important;
+                    color: #fff !important;
                     i {
-                      color: $sidebar-menu-item-active-color !important;
+                      color: #fff !important;
                     }
                   }
                 }

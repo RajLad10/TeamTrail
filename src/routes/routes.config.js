@@ -1,6 +1,6 @@
 
 import { RouteConstants } from "./RouteConstants";
-import { Home, Login, OtpVerification, RedirectToHome } from "./RouterImport";
+import { Home, Login, Organisations, OtpVerification, RedirectToHome } from "./RouterImport";
 
 const routesConfig = {
   common: [],
@@ -8,6 +8,10 @@ const routesConfig = {
     {
       path: RouteConstants.home,
       component:Home,
+    },
+    {
+      path: RouteConstants.organisations,
+      component: Organisations,
     },
     { path: "/*", component: RedirectToHome },
   ],

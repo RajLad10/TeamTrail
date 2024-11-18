@@ -13,3 +13,6 @@ export const Login = lazy(() =>
 
 export const OtpVerification = lazy(() => 
   import("../modules/authentication/OtpVerification.jsx"));
+
+export const Organisations = lazy(() => 
+  import("../modules/organisations/pages/index.jsx"));

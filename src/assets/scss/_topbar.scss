@@ -8,7 +8,7 @@
   right: 0;
   left: $sidebar-width;
   z-index: 1002;
-  background-color: #3a3b3c;
+  background-color: #2a3042;
   box-shadow: $box-shadow;
   @media (max-width: 991.98px) {
     left: 0;
@@ -117,7 +117,7 @@
 .header-item {
   height: $header-height;
   box-shadow: none !important;
-  color: $header-item-color;
+  color: #e9ecef;
   border: 0;
   border-radius: 0px;
   position: relative;
@@ -139,7 +139,7 @@
 .noti-icon {
   i {
     font-size: 22px;
-    color: $header-item-color;
+    color: #fff;
   }
 
   .badge {
@@ -222,13 +222,7 @@ body[data-topbar="dark"] {
   .header-profile-user {
     background-color: rgba($white, 0.25);
   }
-
-  .noti-icon {
-    i {
-      color: $header-dark-item-color;
-    }
-  }
-
+  
   .logo-dark {
     display: none;
   }

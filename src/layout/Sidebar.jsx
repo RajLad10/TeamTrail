@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SidebarContent from "./SidebarContent";
 import { Fragment } from "react";
 import logo from '../assets/images/profile-img.png';
+import ProjectLogo from '../assets/images/vite.svg';
 
 const Sidebar = props => {
   return (
@@ -10,10 +11,10 @@ const Sidebar = props => {
         <div className="navbar-brand-box">
           <Link to="/" className="logo logo-dark">
             <span className="logo-sm">
-              <img src={logo} alt="" height="30" />
+              <img src={ProjectLogo} alt="" height="30" />
             </span>
             <span className="logo-lg">
-              <img src={logo} alt="" height="17" className="h-logo" />
+              <img src={ProjectLogo} alt="" height="17" className="h-logo" />
             </span>
           </Link>
 
@@ -27,6 +28,7 @@ const Sidebar = props => {
           </Link>
         </div>
         <div data-simplebar className="h-100">
+          {/* eslint-disable-next-line react/prop-types*/}
           {props.type !== "condensed" ? <SidebarContent /> : <SidebarContent />}
         </div>
         <div className="sidebar-background"></div>

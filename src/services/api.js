@@ -33,6 +33,7 @@ class Axios {
   }
 
   _requestMiddleware = (req) => {
+    // debugger
     let encryptedPayload = encryptReactdata(JSON.stringify(req.data), import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
 
     const token = get("access_token");
@@ -49,7 +50,6 @@ class Axios {
   };
 
   _responseMiddleware = (response) => {
-    //  Do something on every success full response
     let decryptedResponse = decryptReactData(response?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
 
     if (decryptedResponse?.data?.access_token) {

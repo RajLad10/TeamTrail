@@ -21,6 +21,7 @@ const Home = () => {
   }
   return (
     <Fragment>
+      TEST
       {/* <div className="text-center">Home</div> */}
       {/* <Sidebar/> */}
       {/* <button className="d-flex justify-content-center w-100" onClick={handleLogout}>Logout</button> */}

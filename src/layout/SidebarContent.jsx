@@ -88,20 +88,20 @@ const SidebarContent = () => {
       >
         <div id="sidebar-menu">
           <ul className="metismenu list-unstyled mb-5" id="side-menu">
-            <li className="menu-title">Navigation</li>
+            {/* <li className="menu-title">Navigation</li> */}
             <li>
-              <Link to="/dashboard" className="sidebar-title">
+              <Link to="/" className="sidebar-title">
                 <i className="mdi mdi-view-dashboard-outline"></i>
                 <span>Dashboard</span>
               </Link>
             </li>
             <li>
-              <Link to="/user" className="sidebar-title">
+              <Link to="/organisations" className="sidebar-title">
                 <i className="mdi mdi-account-multiple-outline"></i>
-                <span>User</span>
+                <span>Organisations</span>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/#"
                 className="has-arrow sidebar-title"
@@ -287,7 +287,7 @@ const SidebarContent = () => {
                   </Link>
                 </li>
               </ul>
-            </li>
+            </li> */}
           </ul>
         </div>
       </SimpleBar>
