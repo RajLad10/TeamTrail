@@ -71,7 +71,7 @@ const Login = () => {
               />
             </div>
               {formik.touched.email && formik.errors.email ? (
-                <FormFeedback type="invalid" className="">{formik.errors.email}</FormFeedback>
+                <FormFeedback type="invalid">{formik.errors.email}</FormFeedback>
               ) : null}
 
             <div className="mt-3 d-grid">

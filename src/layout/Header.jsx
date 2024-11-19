@@ -1,37 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import ProfileMenu from "../components/TopbarDropdown/ProfileMenu";
 import logo from '../assets/images/profile-img.png';
 
 const Header = () => {
-  const [search, setsearch] = useState(false);
+  // const [search, setsearch] = useState(false);
 
-  function toggleFullscreen() {
-    if (
-      !document.fullscreenElement &&
-      /* alternative standard method */ !document.mozFullScreenElement &&
-      !document.webkitFullscreenElement
-    ) {
-      // current working methods
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) {
-        document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) {
-        document.documentElement.webkitRequestFullscreen(
-          Element.ALLOW_KEYBOARD_INPUT
-        );
-      }
-    } else {
-      if (document.cancelFullScreen) {
-        document.cancelFullScreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitCancelFullScreen) {
-        document.webkitCancelFullScreen();
-      }
-    }
-  }
+  // function toggleFullscreen() {
+  //   if (
+  //     !document.fullscreenElement &&
+  //     /* alternative standard method */ !document.mozFullScreenElement &&
+  //     !document.webkitFullscreenElement
+  //   ) {
+  //     // current working methods
+  //     if (document.documentElement.requestFullscreen) {
+  //       document.documentElement.requestFullscreen();
+  //     } else if (document.documentElement.mozRequestFullScreen) {
+  //       document.documentElement.mozRequestFullScreen();
+  //     } else if (document.documentElement.webkitRequestFullscreen) {
+  //       document.documentElement.webkitRequestFullscreen(
+  //         Element.ALLOW_KEYBOARD_INPUT
+  //       );
+  //     }
+  //   } else {
+  //     if (document.cancelFullScreen) {
+  //       document.cancelFullScreen();
+  //     } else if (document.mozCancelFullScreen) {
+  //       document.mozCancelFullScreen();
+  //     } else if (document.webkitCancelFullScreen) {
+  //       document.webkitCancelFullScreen();
+  //     }
+  //   }
+  // }
 
   function tToggle() {
     var body = document.body;
@@ -41,7 +41,6 @@ const Header = () => {
       body.classList.toggle("vertical-collpsed");
       body.classList.toggle("sidebar-enable");
     }
-
   }
 
   return (
@@ -75,19 +74,19 @@ const Header = () => {
               <i className="fa fa-fw fa-bars" />
             </button>
 
-            <form className="app-search d-none d-lg-block">
+              {/* Search Button */}
+            {/* <form className="app-search d-none d-lg-block">
               <div className="position-relative">
                 <input
                   type="text"
                   className="form-control"
-                  // placeholder={props.t("Search") + "..."}
                 />
                 <span className="bx bx-search-alt" />
               </div>
-            </form>
+            </form> */}
 
           </div>
-          <div className="d-flex">
+          {/*<div className="d-flex">
             <div className="dropdown d-inline-block d-lg-none ms-2">
               <button
                 onClick={() => {
@@ -99,7 +98,7 @@ const Header = () => {
               >
                 <i className="mdi mdi-magnify" />
               </button>
-              <div
+               <div
                 className={
                   search
                     ? "dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 show"
@@ -125,9 +124,10 @@ const Header = () => {
                   </div>
                 </form>
               </div>
-            </div>
+              </div> */}
 
-            {/* <div className="dropdown d-none d-lg-inline-block ms-1">
+          {/* Toggle Full Screen */}
+          {/* <div className="dropdown d-none d-lg-inline-block ms-1">
               <button
                 type="button"
                 onClick={() => {
@@ -139,8 +139,8 @@ const Header = () => {
                 <i className="bx bx-fullscreen" />
               </button>
             </div> */}
-            <ProfileMenu />
-          </div>
+          <ProfileMenu />
+          {/* </div> */}
         </div>
       </header>
     </React.Fragment>

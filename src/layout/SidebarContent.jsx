@@ -87,7 +87,7 @@ const SidebarContent = () => {
         ref={ref}
       >
         <div id="sidebar-menu">
-          <ul className="metismenu list-unstyled mb-5" id="side-menu">
+          <ul className="metismenu list-unstyled mb-5 mt-2" id="side-menu">
             {/* <li className="menu-title">Navigation</li> */}
             <li>
               <Link to="/" className="sidebar-title">
@@ -96,7 +96,7 @@ const SidebarContent = () => {
               </Link>
             </li>
             <li>
-              <Link to="/organisations" className="sidebar-title">
+              <Link to="/organisations" className="sidebar-title" id="side-menu">
                 <i className="mdi mdi-account-multiple-outline"></i>
                 <span>Organisations</span>
               </Link>

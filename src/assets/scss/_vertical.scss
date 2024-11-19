@@ -239,6 +239,7 @@
     .simplebar-mask,
     .simplebar-content-wrapper {
       overflow: scroll !important;
+      scrollbar-width: none;
     }
 
     .simplebar-scrollbar {

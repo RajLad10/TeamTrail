@@ -7,9 +7,7 @@ import Sidebar from "../../../layout/Sidebar";
 const Home = () => {
   const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    dispatch(logout());
-  }
+  
 
   const handleDummy = () => {
     dispatch(dummy());
@@ -21,13 +19,7 @@ const Home = () => {
   }
   return (
     <Fragment>
-      TEST
-      {/* <div className="text-center">Home</div> */}
-      {/* <Sidebar/> */}
-      {/* <button className="d-flex justify-content-center w-100" onClick={handleLogout}>Logout</button> */}
-      {/* <button onClick={handleDummy}>Dummy</button> */}
-
-      {/* <button onClick={handleDec}>Decrypt</button> */}
+      Dashboard
     </Fragment>
   )
 }

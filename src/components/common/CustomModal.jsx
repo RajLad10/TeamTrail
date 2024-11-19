@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+import { Modal, ModalBody, ModalHeader } from "reactstrap";
 
 const CustomModal = ({
     isOpen,
@@ -8,7 +8,8 @@ const CustomModal = ({
     secondaryButtonText,
     onSubmit = () => {},
     onCancel = () => {},
-    children
+    children,
+    parentClass = "",
 }) => {
     return (
         <Fragment>
@@ -16,6 +17,7 @@ const CustomModal = ({
                 isOpen={isOpen} 
                 size="lg"
                 centered 
+                className={parentClass}
             >
                 <ModalHeader>
                     <h3>{heading}</h3>

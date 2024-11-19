@@ -6,11 +6,16 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import { Link } from "react-router-dom";
 import logo from '../../assets/images/profile-img.png';
+import { logout } from "../../store/authSlice";
+import { useDispatch } from "react-redux";
 
 const ProfileMenu = () => {
   const [menu, setMenu] = useState(false);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  }
   return (
     <React.Fragment>
       <Dropdown
@@ -38,10 +43,10 @@ const ProfileMenu = () => {
             <span className="fs-6">Profile</span>
           </DropdownItem>
           <div className="dropdown-divider" />
-          <Link to="/logout" className="dropdown-item">
+          <div onClick={handleLogout} className="dropdown-item">
             <i className="bx bx-power-off align-middle me-1 text-danger" />
             <span className="fs-6">Logout</span>
-          </Link>
+          </div>
         </DropdownMenu>
       </Dropdown>
     </React.Fragment>

@@ -33,7 +33,6 @@ class Axios {
   }
 
   _requestMiddleware = (req) => {
-    // debugger
     let encryptedPayload = encryptReactdata(JSON.stringify(req.data), import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
 
     const token = get("access_token");
