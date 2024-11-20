@@ -59,20 +59,30 @@ const Organisations = () => {
                         Add Organisation
                     </button>
                 </div>
-                <div className="organisation-list">
+                <div className="organisation-list row">
                     {!loading ?
                         org?.map((list) => {
                             return (
-                                <div key={list?.org_id} className="organisation-cards">
-                                    <span className="org-edit">
-                                        <i className="fas fa-edit me-2" onClick={() => handleOpenEditModal(list)}></i>
-                                        <i className="fas fa-trash" onClick={() => handleDeleteOrganisation(list)}></i>
-                                    </span>
+                                <div key={list?.org_id} className="organisation-cards col-4">
                                     <div className="organisation-logo">
                                         <img src={logo} alt="company-logo" />
                                     </div>
                                     <div className="company-details">
                                         <h6>{list?.name}</h6>
+                                    </div>
+                                    <div className="org-edit">
+                                        <div
+                                            className="icon-square-container edit-square"
+                                            onClick={() => handleOpenEditModal(list)}
+                                        >
+                                            <i className="fas fa-edit" ></i>
+                                        </div>
+                                        <div
+                                            className="icon-square-container delete-square"
+                                            onClick={() => handleDeleteOrganisation(list)}
+                                        >
+                                            <i className="fas fa-trash" ></i>
+                                        </div>
                                     </div>
                                 </div>
                             )

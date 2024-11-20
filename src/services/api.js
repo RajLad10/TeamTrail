@@ -1,6 +1,4 @@
 import axios from "axios";
-// import store from "store";
-// import { logout } from "store/actions";
 import { clearLocal, get, set } from "./localStorage";
 import { decryptReactData, encryptReactdata } from "../constant";
 

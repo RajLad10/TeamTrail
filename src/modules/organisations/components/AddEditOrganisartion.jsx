@@ -196,15 +196,17 @@ const AddEditOrganisation = ({
                 primaryButtonText={primaryButtonText}
                 secondaryButtonText={secondaryButtonText}
                 parentClass="add-edit-organisation-modal"
+                onCancel={handleModalClose}
             >
                 <div>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="row">
                             <div className="mb-3 col-6">
-                                <label htmlFor="name" className="form-label">Organisation Name</label>
+                                <label htmlFor="name" className="form-label">Name</label>
                                 <input
                                     type="text"
                                     className="form-control"
+                                    placeholder="Enter organisation name"
                                     id="name"
                                     name="name"
                                     value={formik.values.name}
@@ -216,10 +218,11 @@ const AddEditOrganisation = ({
                                 ) : null}
                             </div>
                             <div className="mb-3 col-6">
-                                <label htmlFor="phone" className="form-label">Organisation Phone</label>
+                                <label htmlFor="phone" className="form-label">Phone Number</label>
                                 <input
                                     type="text"
                                     className="form-control"
+                                    placeholder="Enter organisation phone number"
                                     id="phone"
                                     name="phone"
                                     value={formik.values.phone}
@@ -233,7 +236,7 @@ const AddEditOrganisation = ({
                         </div>
                         <div className="row">
                             <div className="mb-3 col-6">
-                                <label htmlFor="logo" className="form-label">Organisation Logo</label>
+                                <label htmlFor="logo" className="form-label">Logo</label>
                                 <input
                                     type="file"
                                     className="form-control"
@@ -245,10 +248,11 @@ const AddEditOrganisation = ({
                                 />
                             </div>
                             <div className="mb-3 col-6">
-                                <label htmlFor="website" className="form-label">Organisation Website</label>
+                                <label htmlFor="website" className="form-label">Website</label>
                                 <input
                                     type="url"
                                     className="form-control"
+                                    placeholder="Enter organisation website URL"
                                     id="website"
                                     name="website"
                                     value={formik.values.website}
@@ -260,43 +264,49 @@ const AddEditOrganisation = ({
                                 ) : null}
                             </div>
                         </div>
-                        <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Organisation Email</label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                name="email"
-                                value={formik.values.email}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                            />
-                            {formik.touched.email && formik.errors.email ? (
-                                <div className="text-danger">{formik.errors.email}</div>
-                            ) : null}
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="address" className="form-label">Organisation Address</label>
-                            <textarea
-                                className="form-control"
-                                id="address"
-                                name="address"
-                                value={formik.values.address}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                            />
-                            {formik.touched.address && formik.errors.address ? (
-                                <div className="text-danger">{formik.errors.address}</div>
-                            ) : null}
+                        <div className="row">
+                            <div className="mb-3 col">
+                                <label htmlFor="email" className="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    placeholder="Enter organisation email"
+                                    id="email"
+                                    name="email"
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                />
+                                {formik.touched.email && formik.errors.email ? (
+                                    <div className="text-danger">{formik.errors.email}</div>
+                                ) : null}
+                            </div>
+                            <div className="mb-3 col">
+                                <label htmlFor="address" className="form-label">Address</label>
+                                <textarea
+                                    className="form-control"
+                                    id="address"
+                                    placeholder="Enter organisation address"
+                                    name="address"
+                                    value={formik.values.address}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    rows={1}
+                                />
+                                {formik.touched.address && formik.errors.address ? (
+                                    <div className="text-danger">{formik.errors.address}</div>
+                                ) : null}
+                            </div>
                         </div>
                         {type === 1 ?
                             <>
                                 <div className="row">
                                     <div className="mb-3 col-4">
-                                        <label htmlFor="first_name" className="form-label">Admin First Name</label>
+                                        <label htmlFor="first_name" className="form-label">First Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
+                                            placeholder="Enter Admin first name"
                                             id="first_name"
                                             name="first_name"
                                             value={formik.values.first_name}
@@ -308,11 +318,12 @@ const AddEditOrganisation = ({
                                         ) : null}
                                     </div>
                                     <div className="mb-3 col-4">
-                                        <label htmlFor="middle_name" className="form-label">Admin Middle Name</label>
+                                        <label htmlFor="middle_name" className="form-label">Middle Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
                                             id="middle_name"
+                                            placeholder="Enter Admin middle name"
                                             name="middle_name"
                                             value={formik.values.middle_name}
                                             onChange={formik.handleChange}
@@ -323,10 +334,11 @@ const AddEditOrganisation = ({
                                         ) : null}
                                     </div>
                                     <div className="mb-3 col-4">
-                                        <label htmlFor="last_name" className="form-label">Admin Last Name</label>
+                                        <label htmlFor="last_name" className="form-label">Last Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
+                                            placeholder="Enter Admin last name"
                                             id="last_name"
                                             name="last_name"
                                             value={formik.values.last_name}
@@ -340,10 +352,11 @@ const AddEditOrganisation = ({
                                 </div>
                                 <div className="row">
                                     <div className="mb-3 col-6">
-                                        <label htmlFor="admin_email" className="form-label">Admin Email</label>
+                                        <label htmlFor="admin_email" className="form-label">Email</label>
                                         <input
                                             type="email"
                                             className="form-control"
+                                            placeholder="Enter Admin email"
                                             id="personal_email"
                                             name="personal_email"
                                             value={formik.values.personal_email}
@@ -355,10 +368,11 @@ const AddEditOrganisation = ({
                                         ) : null}
                                     </div>
                                     <div className="mb-3 col-6">
-                                        <label htmlFor="personal_phone" className="form-label">Admin Phone Number</label>
+                                        <label htmlFor="personal_phone" className="form-label">Phone Number</label>
                                         <input
                                             type="text"
                                             className="form-control"
+                                            placeholder="Enter Admin phone number"
                                             id="personal_phone"
                                             name="personal_phone"
                                             value={formik.values.personal_phone}

@@ -4,12 +4,6 @@ const CustomDropdown = () => {
     return (
         <div
             className="three-dots-options"
-        // style={{
-        //     position: "absolute",
-        //     top: toolbarPosition.top,
-        //     left: toolbarPosition.left,
-        //     display: "inline-block",
-        // }}
         >
             <div
                 className="dropdown-board-home three-dots"

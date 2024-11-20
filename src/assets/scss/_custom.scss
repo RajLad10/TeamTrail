@@ -1,6 +1,7 @@
 #sidebar-menu {
   padding-left: 5px;
-  a{
+
+  a {
     text-decoration: none !important;
     color: #a6b0cf;
   }
@@ -12,6 +13,37 @@
         border-radius: 8px 0 0 10px;
         color: #fff !important;
       }
+    }
+  }
+}
+
+.icon-square-container {
+  width: 40px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+
+  &.delete-square {
+    background: #fee6e6;
+    color: #f70101;
+
+    &:hover{
+      background: #f70101;
+      color: #fff;
+    }
+  }
+
+  &.edit-square {
+    // background: #ebf9fb;
+    background: #dbf6fa;
+    color: #33bfd7;
+
+    &:hover{
+      background: #33bfd7;
+      color: #fff;
     }
   }
 }

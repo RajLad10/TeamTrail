@@ -19,7 +19,7 @@ const CustomModal = ({
                 centered 
                 className={parentClass}
             >
-                <ModalHeader>
+                <ModalHeader toggle={onCancel}>
                     <h3>{heading}</h3>
                 </ModalHeader>
                 <ModalBody>
