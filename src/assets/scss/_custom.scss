@@ -37,7 +37,6 @@
   }
 
   &.edit-square {
-    // background: #ebf9fb;
     background: #dbf6fa;
     color: #33bfd7;
 
@@ -45,5 +44,12 @@
       background: #33bfd7;
       color: #fff;
     }
+  }
+}
+
+input, textarea{
+  &:focus{
+      box-shadow: none !important;
+      border-color: #dee2e6 !important;
   }
 }

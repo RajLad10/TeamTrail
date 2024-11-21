@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import CustomModal from "../../../components/common/CustomModal";
 import { addEditOrganisation } from "../../../store/organisationSlice";
+// import CustomAllDropZone from "../../../components/common/DropZone/CustomAllDropZone"
 
 const AddEditOrganisation = ({
     isOpen,
@@ -45,39 +46,6 @@ const AddEditOrganisation = ({
         handleModalClose();
         // handleListOrganisations();
     }
-
-    // let validationShape = Yup.object({
-    //     name: Yup.string().trim().required("Organisation name is required"),
-    //     email: Yup.string()
-    //         .trim()
-    //         .email("Invalid email address format")
-    //         .matches(
-    //             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-    //             "Invalid email address format"
-    //         )
-    //         .required("Organisation Email is required"),
-    //     logo: Yup.string().trim(),
-    //     address: Yup.string().trim().required("Organisation address is required"),
-    //     phone: Yup.string().trim()
-    //         .matches(phoneRegExp, 'Phone number is not valid')
-    //         .required("Phone number is required"),
-    //     website: Yup.string().trim().required("Organisation website is required"),
-    // });
-
-    // if (type === 1) {
-    //     validationShape.first_name = Yup.string().trim().required("Admin first name is required");
-    //     validationShape.middle_name = Yup.string().trim().required("Admin middle name is required");
-    //     validationShape.last_name = Yup.string().trim().required("Admin last name is required");
-    //     validationShape.personal_email = Yup.string().trim().email("Invalid email address format")
-    //         .matches(
-    //             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-    //             "Invalid email address format"
-    //         )
-    //         .required("Admin Email is required");
-    //     validationShape.personal_phone = Yup.string().trim()
-    //         .matches(phoneRegExp, 'Phone number is not valid')
-    //         .required("Admin phone number is required");
-    // }
 
     const getValidationSchema = () => {
         const baseSchema = {
@@ -145,42 +113,10 @@ const AddEditOrganisation = ({
             personal_phone: type === 1 ? '' : null,
         },
         validationSchema: getValidationSchema(),
-
-        // Yup.object({
-        //     name: Yup.string().trim().required("Organisation name is required"),
-        //     email: Yup.string()
-        //         .trim()
-        //         .email("Invalid email address format")
-        //         .matches(
-        //             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-        //             "Invalid email address format"
-        //         )
-        //         .required("Organisation Email is required"),
-        //     logo: Yup.string().trim(),
-        //     address: Yup.string().trim().required("Organisation address is required"),
-        //     phone: Yup.string().trim()
-        //         .matches(phoneRegExp, 'Phone number is not valid')
-        //         .required("Phone number is required"),
-        //     website: Yup.string().trim().required("Organisation website is required"),
-        //     first_name: type === 1 ? Yup.string().trim().required("Admin first name is required") : Yup.string().trim(),
-        //     middle_name: type === 1 ? Yup.string().trim().required("Admin middle name is required") : Yup.string().trim(),
-        //     last_name: type === 1 ? Yup.string().trim().required("Admin last name is required") : Yup.string().trim(),
-        //     personal_email: type === 1 ? Yup.string().trim().email("Invalid email address format")
-        //         .matches(
-        //             /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-        //             "Invalid email address format"
-        //         )
-        //         .required("Admin Email is required")
-        //         : Yup.string().trim(),
-        //     personal_phone: type === 1 ? Yup.string().trim()
-        //         .matches(phoneRegExp, 'Phone number is not valid')
-        //         .required("Admin phone number is required") : Yup.string().trim(),
-        // }),
         onSubmit: handleSubmit
     });
 
     console.log("Errors", formik.errors);
-
 
     const handleModalClose = () => {
         formik.resetForm();
@@ -202,7 +138,7 @@ const AddEditOrganisation = ({
                     <form onSubmit={formik.handleSubmit}>
                         <div className="row">
                             <div className="mb-3 col-6">
-                                <label htmlFor="name" className="form-label">Name</label>
+                                <label htmlFor="name" className="form-label mb-1">Name</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -218,7 +154,7 @@ const AddEditOrganisation = ({
                                 ) : null}
                             </div>
                             <div className="mb-3 col-6">
-                                <label htmlFor="phone" className="form-label">Phone Number</label>
+                                <label htmlFor="phone" className="form-label mb-1">Phone Number</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -236,7 +172,7 @@ const AddEditOrganisation = ({
                         </div>
                         <div className="row">
                             <div className="mb-3 col-6">
-                                <label htmlFor="logo" className="form-label">Logo</label>
+                                <label htmlFor="logo" className="form-label mb-1">Logo</label>
                                 <input
                                     type="file"
                                     className="form-control"
@@ -246,9 +182,39 @@ const AddEditOrganisation = ({
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                 />
+                                {/* <CustomAllDropZone
+                                    folderName={folders.ANNOUNCEMENTS}
+                                    bucketName={buckets.HUB}
+                                    userId={user?.user_id}
+                                    src={attachmentsDrop.attachment}
+                                    accept={process.env.REACT_APP_EXTENSION_FILE}
+                                    handleRemove={url => {
+                                        setAttachmentsDrop(prev => ({
+                                            ...prev,
+                                            attachment: prev.attachment.filter(
+                                                i => i.attachments !== url
+                                            ),
+                                        }))
+                                    }}
+                                    handleOnDrop={(url, name) => {
+                                        setAttachmentsDrop(prev => ({
+                                            ...prev,
+                                            attachment: [
+                                                ...prev.attachment,
+                                                {
+                                                    hub_attachment_id: 0,
+                                                    attachments: url,
+                                                    attachment_name: name,
+                                                },
+                                            ],
+                                        }))
+                                    }}
+                                    handleStartLoading={handleStartLoading}
+                                    handleStopLoading={handleStopLoading}
+                                /> */}
                             </div>
                             <div className="mb-3 col-6">
-                                <label htmlFor="website" className="form-label">Website</label>
+                                <label htmlFor="website" className="form-label mb-1">Website</label>
                                 <input
                                     type="url"
                                     className="form-control"
@@ -266,7 +232,7 @@ const AddEditOrganisation = ({
                         </div>
                         <div className="row">
                             <div className="mb-3 col">
-                                <label htmlFor="email" className="form-label">Email</label>
+                                <label htmlFor="email" className="form-label mb-1">Email</label>
                                 <input
                                     type="email"
                                     className="form-control"
@@ -282,7 +248,7 @@ const AddEditOrganisation = ({
                                 ) : null}
                             </div>
                             <div className="mb-3 col">
-                                <label htmlFor="address" className="form-label">Address</label>
+                                <label htmlFor="address" className="form-label mb-1">Address</label>
                                 <textarea
                                     className="form-control"
                                     id="address"
@@ -302,7 +268,7 @@ const AddEditOrganisation = ({
                             <>
                                 <div className="row">
                                     <div className="mb-3 col-4">
-                                        <label htmlFor="first_name" className="form-label">First Name</label>
+                                        <label htmlFor="first_name" className="form-label mb-1">First Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -318,7 +284,7 @@ const AddEditOrganisation = ({
                                         ) : null}
                                     </div>
                                     <div className="mb-3 col-4">
-                                        <label htmlFor="middle_name" className="form-label">Middle Name</label>
+                                        <label htmlFor="middle_name" className="form-label mb-1">Middle Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -334,7 +300,7 @@ const AddEditOrganisation = ({
                                         ) : null}
                                     </div>
                                     <div className="mb-3 col-4">
-                                        <label htmlFor="last_name" className="form-label">Last Name</label>
+                                        <label htmlFor="last_name" className="form-label mb-1">Last Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -352,7 +318,7 @@ const AddEditOrganisation = ({
                                 </div>
                                 <div className="row">
                                     <div className="mb-3 col-6">
-                                        <label htmlFor="admin_email" className="form-label">Email</label>
+                                        <label htmlFor="admin_email" className="form-label mb-1">Email</label>
                                         <input
                                             type="email"
                                             className="form-control"
@@ -368,7 +334,7 @@ const AddEditOrganisation = ({
                                         ) : null}
                                     </div>
                                     <div className="mb-3 col-6">
-                                        <label htmlFor="personal_phone" className="form-label">Phone Number</label>
+                                        <label htmlFor="personal_phone" className="form-label mb-1">Phone Number</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -390,13 +356,13 @@ const AddEditOrganisation = ({
                         <div className="form-buttons d-flex justify-content-end">
                             <button
                                 type="submit"
-                                className="btn btn-primary submit-btn"
+                                className="btn btn-outline-primary submit-btn"
                             >
                                 {primaryButtonText || "Submit"}
                             </button>
                             <button
                                 type="button"
-                                className="btn btn-secondary cancel-btn ms-2"
+                                className="btn btn-outline-dark cancel-btn ms-2"
                                 onClick={handleModalClose}
                             >
                                 {secondaryButtonText || "Cancel"}
