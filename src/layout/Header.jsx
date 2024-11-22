@@ -74,7 +74,25 @@ const Header = () => {
               <i className="fa fa-fw fa-bars" />
             </button>
 
-              {/* Search Button */}
+            {/* Breadcrumbs */}
+            {/* <nav aria-label="breadcrumb">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item"><a href="#">Home</a></li>
+                <li className="breadcrumb-item active" aria-current="page">Library</li>
+              </ol>
+            </nav> */}
+            <div className="breadcrumbs">
+              <nav>
+                <ol className="cd-breadcrumb">
+                  <li><a href="#0">Home</a></li>
+                  <li><a href="#0">Gallery</a></li>
+                  <li><a href="#0">Web</a></li>
+                  <li className="current"><em>Project</em></li>
+                </ol>
+              </nav>
+            </div>
+
+            {/* Search Button */}
             {/* <form className="app-search d-none d-lg-block">
               <div className="position-relative">
                 <input

@@ -1,0 +1,76 @@
+.breadcrumbs {
+    .cd-breadcrumb {
+        font-size: 16px;
+        // width: 90%;
+        // max-width: 768px;
+        // padding: 0.5em 1em;
+        // margin: 1em auto;
+        // background-color: #edeff0;
+        border-radius: .25em;
+        margin: 0px !important;
+    }
+
+    .cd-breadcrumb::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .cd-breadcrumb li {
+        display: inline-block;
+        float: left;
+        margin: 0.5em 0;
+    }
+
+    .cd-breadcrumb li a{
+        font-size: 16px;
+    }
+
+    .cd-breadcrumb li::after {
+        /* this is the separator between items */
+        display: inline-block;
+        content: '\00bb';
+        margin: 0 .6em;
+        color: #959fa5;
+    }
+
+    .cd-breadcrumb li:last-of-type::after {
+        /* hide separator after the last item */
+        display: none;
+    }
+
+    .cd-breadcrumb li>* {
+        /* single step */
+        display: inline-block;
+        font-size: 1.4rem;
+        color: #2c3f4c;
+    }
+
+    .cd-breadcrumb li.current>* {
+        /* selected step */
+        color: #96c03d;
+    }
+
+    .no-touch .cd-breadcrumb a:hover {
+        /* steps already visited */
+        color: #96c03d;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .cd-breadcrumb {
+            padding: 0 1.2em;
+        }
+
+        .cd-breadcrumb li {
+            margin: 1.2em 0;
+        }
+
+        .cd-breadcrumb li::after {
+            margin: 0 1em;
+        }
+
+        .cd-breadcrumb li>* {
+            font-size: 1.6rem;
+        }
+    }
+}

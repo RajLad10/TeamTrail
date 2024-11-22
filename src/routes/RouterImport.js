@@ -16,3 +16,6 @@ export const OtpVerification = lazy(() =>
 
 export const Organisations = lazy(() => 
   import("../modules/organisations/pages/index.jsx"));
+
+export const Profile = lazy(() => 
+  import("../modules/profile/pages/index.jsx"));

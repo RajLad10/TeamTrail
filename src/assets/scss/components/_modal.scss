@@ -1,0 +1,35 @@
+.confirmation-modal{
+    width: 350px;
+    .modal-header{
+        padding: 10px !important;
+        border: none;
+    }
+    .modal-body{
+        padding-top: 0;
+        text-align: center;
+
+        .warning-text{
+            text-align: center;
+
+            .warning-icon{
+                color: #ff0000;
+                font-size: 75px;
+                line-height: 1;
+            }
+            .warning-title{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .warning-subtitle{
+                font-size: 14px;
+            }
+        }
+        .footer{
+            .warning-submit-btn{
+                --bs-btn-color: #ff0000;
+                --bs-btn-border-color: #ff0000;
+                --bs-btn-hover-bg: #ff0000;
+            }
+        }
+    }
+}

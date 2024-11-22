@@ -9,6 +9,7 @@ import {
 import logo from '../../assets/images/profile-img.png';
 import { logout } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ProfileMenu = () => {
   const [menu, setMenu] = useState(false);
@@ -37,10 +38,12 @@ const ProfileMenu = () => {
           <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
-          <DropdownItem tag="a" href="/profile">
+          <DropdownItem>
+            <Link to={"/profile"} >
             {" "}
             <i className="bx bx-user align-middle me-1 " />
             <span className="fs-6">Profile</span>
+            </Link>
           </DropdownItem>
           <div className="dropdown-divider" />
           <div onClick={handleLogout} className="dropdown-item">

@@ -3,4 +3,5 @@ export const RouteConstants = {
   login: "/login",
   verifyOtp: "/verify-otp",
   organisations: "/organisations",
+  profile: "/profile",
 };

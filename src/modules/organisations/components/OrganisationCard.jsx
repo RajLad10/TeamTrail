@@ -1,10 +1,17 @@
-import { Fragment } from "react"
+import { Fragment, useState } from "react"
 import logo from '../../../assets/images/profile-img.png';
+import ConfirmationModal from "../../../components/common/ConfirmationModal";
+import { Col } from "reactstrap";
 
 const OrganisationCard = ({ data = {}, handleEdit, handleDeactivate }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleConfirmDeactivate = () => {
+        setIsOpen(true);
+    }
     return (
         <Fragment>
-            <div key={data?.org_id} className="organisation-cards col-4">
+            <Col sm={6} md={6} lg={4} xl={4} xxl={3} key={data?.org_id} className="organisation-cards" >
                 <div className="organisation-logo">
                     <img src={logo} alt="company-logo" />
                 </div>
@@ -20,12 +27,24 @@ const OrganisationCard = ({ data = {}, handleEdit, handleDeactivate }) => {
                     </div>
                     <div
                         className="icon-square-container delete-square"
-                        onClick={() => handleDeactivate(data)}
+                        onClick={() => handleConfirmDeactivate(data)}
                     >
-                        <i className="fas fa-trash" ></i>
+                        {/* <i className="fas fa-trash" ></i> */}
+                        {/* <span className="mdi mdi-eye"></span> */}
+                        <span className="mdi mdi-eye-off-outline"></span>
                     </div>
                 </div>
-            </div>
+            </Col>
+            <ConfirmationModal
+                isOpen={isOpen}
+                data={data}
+                onSubmit={handleDeactivate}
+                onCancel={() => setIsOpen(false)}
+                title={data?.name}
+                parentClass="organisation-delete-confirmation"
+                primaryButtonText="Deactivate"
+                secondaryButtonText="Cancel"
+            />
         </Fragment>
     )
 }

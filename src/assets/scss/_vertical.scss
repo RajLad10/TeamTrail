@@ -193,7 +193,7 @@
   }
 
   .main-content {
-    margin-left: 0 !important;
+    // margin-left: 0 !important;
   }
 
   body.sidebar-enable {
@@ -288,6 +288,11 @@
               color: #383c40;
             }
 
+            &:hover{
+              border-radius: 8px 0 0 10px;
+              color: #2a3042;
+            }
+
             i {
               font-size: 1.45rem;
               margin-left: 4px;
@@ -303,12 +308,12 @@
             > a {
               position: relative;
               width: calc(190px + #{$sidebar-collapsed-width});
-              color: $primary;
+              color: #556ee6;
               background-color: darken($sidebar-bg, 4%);
               transition: none;
 
               i {
-                color: $primary;
+                color: #556ee6 !important;
               }
 
               span {
