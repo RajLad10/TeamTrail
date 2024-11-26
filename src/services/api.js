@@ -56,7 +56,7 @@ class Axios {
       set("refresh_token", encryptReactdata(JSON.stringify(decryptedResponse?.data?.refresh_token), import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY));
     }
     // return {...response, data: decryptedResponse?.data};
-    return response;
+    return decryptedResponse;
   };
 
   // _responseErr = error => {

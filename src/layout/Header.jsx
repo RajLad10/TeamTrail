@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProfileMenu from "../components/TopbarDropdown/ProfileMenu";
 import logo from '../assets/images/profile-img.png';
+import BreadCrumb from "../components/Breadcrumbs";
 
 const Header = () => {
   // const [search, setsearch] = useState(false);
@@ -75,75 +76,10 @@ const Header = () => {
             </button>
 
             {/* Breadcrumbs */}
-            {/* <nav aria-label="breadcrumb">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item"><a href="#">Home</a></li>
-                <li className="breadcrumb-item active" aria-current="page">Library</li>
-              </ol>
-            </nav> */}
-            <div className="breadcrumbs">
-              <nav>
-                <ol className="cd-breadcrumb">
-                  <li><a href="#0">Home</a></li>
-                  <li><a href="#0">Gallery</a></li>
-                  <li><a href="#0">Web</a></li>
-                  <li className="current"><em>Project</em></li>
-                </ol>
-              </nav>
-            </div>
-
-            {/* Search Button */}
-            {/* <form className="app-search d-none d-lg-block">
-              <div className="position-relative">
-                <input
-                  type="text"
-                  className="form-control"
-                />
-                <span className="bx bx-search-alt" />
-              </div>
-            </form> */}
+            <BreadCrumb />
 
           </div>
-          {/*<div className="d-flex">
-            <div className="dropdown d-inline-block d-lg-none ms-2">
-              <button
-                onClick={() => {
-                  setsearch(!search);
-                }}
-                type="button"
-                className="btn header-item noti-icon "
-                id="page-header-search-dropdown"
-              >
-                <i className="mdi mdi-magnify" />
-              </button>
-               <div
-                className={
-                  search
-                    ? "dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 show"
-                    : "dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                }
-                aria-labelledby="page-header-search-dropdown"
-              >
-                <form className="p-3">
-                  <div className="form-group m-0">
-                    <div className="input-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search ..."
-                        aria-label="Recipient's username"
-                      />
-                      <div className="input-group-append">
-                        <button className="btn btn-primary" type="submit">
-                          <i className="mdi mdi-magnify" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              </div> */}
-
+          
           {/* Toggle Full Screen */}
           {/* <div className="dropdown d-none d-lg-inline-block ms-1">
               <button

@@ -13,13 +13,12 @@ export const listOrganizations = createAsyncThunk(
   "organisations/listOrganizations",
   async ({ data, cb } = {}, thunk) => {
     try {
-      console.log("Payload", data);
       const res = await axiosTrail.post(LIST_ORGANIZATIONS, data);
       if (res?.data) {
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
-        console.log("Dec", decryptedResponse);
-        cb(decryptedResponse?.data?.total);
-        return decryptedResponse?.data;
+        // let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
+        console.log("listOrganizations", res);
+        cb(res?.data?.total);
+        return res?.data;
       }
     }
     catch (e) {
@@ -33,12 +32,14 @@ export const addEditOrganisation = createAsyncThunk(
   "organisations/addEditOrganisation",
   async ({ data, cb } = {}, thunk) => {
     try {
+      console.log("addEditOrganisation Payload", data);
       const res = await axiosTrail.post(SAVE_ORGANIZATION, data);
       if (res?.data) {
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
+        // let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
+        console.log("addEditOrganisation", res);
         cb();
-        toast.success(decryptedResponse?.message);
-        return decryptedResponse?.data;
+        toast.success(res?.message);
+        return res?.data;
       }
     }
     catch (e) {
@@ -54,10 +55,11 @@ export const deleteOrganisation = createAsyncThunk(
     try {
       const res = await axiosTrail.post(DELETE_ORGANIZATION, data);
       if (res?.data) {
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
+        // let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
         cb();
-        toast.success(decryptedResponse?.message);
-        return decryptedResponse?.data;
+        console.log("deleteOrganisation", res);
+        toast.success(res?.message);
+        return res?.data;
       }
     }
     catch (e) {

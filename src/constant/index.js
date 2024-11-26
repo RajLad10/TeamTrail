@@ -19,3 +19,7 @@ export function decryptReactData(encryptedKey, secretKey) {
         return originalDecryptedText;
     }
 }
+
+export const profileTabs = [
+    "About", "Profile", "Job", "Documents", "Assets"
+]

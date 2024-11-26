@@ -37,7 +37,6 @@ const OtpVerification = () => {
     const subHeading = "Enter OTP";
 
     const handleSubmit = (values) => {
-        console.log("Values", values);
         dispatch(verifyOtp({
             otp: +(values?.otp),
             id: tempId || id,
