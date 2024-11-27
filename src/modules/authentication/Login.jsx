@@ -12,8 +12,7 @@ const Login = () => {
   //meta title
   document.title = "Login | TeamTrail";
 
-  const {user, loading} = useSelector(state => state.auth)
-  console.log("USER", user, loading);
+  const { loading } = useSelector(state => state.auth)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const heading = "Welcome Back !";
@@ -70,9 +69,9 @@ const Login = () => {
                 }
               />
             </div>
-              {formik.touched.email && formik.errors.email ? (
-                <FormFeedback type="invalid">{formik.errors.email}</FormFeedback>
-              ) : null}
+            {formik.touched.email && formik.errors.email ? (
+              <FormFeedback type="invalid">{formik.errors.email}</FormFeedback>
+            ) : null}
 
             <div className="mt-3 d-grid">
               <button

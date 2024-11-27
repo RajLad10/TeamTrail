@@ -3,7 +3,6 @@ import { axiosTrail } from '../services/api';
 import { LOGIN, LOGOUT, VERIFY_OTP } from '../constant/url-helper';
 import toast from 'react-hot-toast';
 import { clearLocal, get } from '../services/localStorage';
-import { decryptReactData } from '../constant';
 
 const initialState = {
   isAuthorize: get("access_token") ? true : false,
@@ -19,10 +18,9 @@ export const login = createAsyncThunk(
         email: payload?.email
       });
       if(res?.data){
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
-        payload.cb(decryptedResponse?.data);
-        toast.success(decryptedResponse?.message);
-        return decryptedResponse; 
+        payload.cb(res?.data);
+        toast.success(res?.message);
+        return res?.data; 
       }
     }
     catch(e){
@@ -41,10 +39,9 @@ export const verifyOtp = createAsyncThunk(
         id: payload?.id
       });
       if(res?.data){
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
-        payload.cb(decryptedResponse?.data);
-        toast.success(decryptedResponse?.message)
-        return decryptedResponse;
+        payload.cb(res?.data);
+        toast.success(res?.message)
+        return res?.data;
       }
     }
     catch(e){
@@ -62,9 +59,8 @@ export const resendOtp = createAsyncThunk(
         id: payload?.id
       });
       if(res?.data){
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
-        payload.cb(decryptedResponse?.data);
-        toast.success(decryptedResponse?.message)
+        payload.cb(res?.data);
+        toast.success(res?.message)
       }
     }
     catch(e){
@@ -80,9 +76,8 @@ export const logout = createAsyncThunk(
     try{
       const res = await axiosTrail.get(LOGOUT);
       if(res?.data){
-        let decryptedResponse = decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY);
         clearLocal();
-        toast.success(decryptedResponse?.message)
+        toast.success(res?.message)
       }
     }
     catch(e){
@@ -92,37 +87,10 @@ export const logout = createAsyncThunk(
   }
 )
 
-export const dummy = createAsyncThunk(
-  "auth/dummy",
-  async (payload, thunk) => {
-    try{
-      const res = await axiosTrail.get("/test");
-      if(res?.data?.data){
-        let decData = (decryptReactData(res?.data?.data, import.meta.env.VITE_ENCRYPTION_DECRYPTION_KEY))
-        let parsedData;
-        try {
-          parsedData = JSON.parse(decData);
-        } catch (e) {
-            parsedData = decData; 
-        }
-        
-        toast.success(res?.data?.message || "Success");
-      }
-    }
-    catch(e){
-      toast.error(e?.response?.data?.message || "Failed");
-      return thunk.rejectWithValue(e?.response?.data);
-    }
-  }
-)
-
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload
-    // },
   },
   extraReducers: (builder) => {
     // login

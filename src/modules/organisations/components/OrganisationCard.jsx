@@ -11,7 +11,8 @@ const OrganisationCard = ({ data = {}, handleEdit, handleDeactivate }) => {
     }
     return (
         <Fragment>
-            <Col sm={6} md={6} lg={4} xl={4} xxl={3} key={data?.org_id} className="organisation-cards" >
+            <Col sm={6} md={6} lg={4} xl={4} xxl={3} key={data?.org_id} >
+                <div className="organisation-cards">
                 <div className="organisation-logo">
                     <img src={logo} alt="company-logo" />
                 </div>
@@ -33,6 +34,7 @@ const OrganisationCard = ({ data = {}, handleEdit, handleDeactivate }) => {
                         {/* <span className="mdi mdi-eye"></span> */}
                         <span className="mdi mdi-eye-off-outline"></span>
                     </div>
+                </div>
                 </div>
             </Col>
             <ConfirmationModal

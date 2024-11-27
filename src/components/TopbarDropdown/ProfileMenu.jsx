@@ -39,7 +39,7 @@ const ProfileMenu = () => {
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
           <DropdownItem>
-            <Link to={"/profile"} >
+            <Link to={"/profile"} className="text-decoration-none" >
             {" "}
             <i className="bx bx-user align-middle me-1 " />
             <span className="fs-6">Profile</span>
